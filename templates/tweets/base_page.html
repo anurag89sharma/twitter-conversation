@@ -1,5 +1,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 <script>
+
 $(document).ready(function () {
 	setTimeout(
     function() {
@@ -7,7 +8,7 @@ $(document).ready(function () {
     }, 5000);
 
     function get_tweets(){
-    	setInterval(function(){
+    	var interval_id = setInterval(function(){
 		//alert('Hello');
     	$.ajax({
         	type: "GET",
@@ -24,6 +25,12 @@ $(document).ready(function () {
     	});
     	},5000);
     }
+
+    window.onbeforeunload = function() {
+        //return "interval_id: " + interval_id.toString();
+        clearInterval(interval_id);
+    };
+
 })</script>
 
 
