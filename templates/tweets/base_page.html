@@ -5,7 +5,7 @@ $(document).ready(function () {
 	setTimeout(
     function() {
       get_tweets();
-    }, 5000);
+    }, 2500);
 
     function get_tweets(){
     	var interval_id = setInterval(function(){
@@ -23,7 +23,7 @@ $(document).ready(function () {
             	console.log('could not fetch user data');
         	}
     	});
-    	},5000);
+    	},2500);
     }
 
     window.onbeforeunload = function() {
