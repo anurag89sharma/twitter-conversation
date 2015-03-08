@@ -1,0 +1,44 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+	setTimeout(
+    function() {
+      get_tweets();
+    }, 5000);
+
+    function get_tweets(){
+    	setInterval(function(){
+		//alert('Hello');
+    	$.ajax({
+        	type: "GET",
+        	async:true,
+        	url: '/api/user-timeline/',
+        	//data:{'key':'get_conversation'},
+        	success:function(data){
+        	    //alert(data);
+        	    $('#conversation').append(data);
+        	},
+        	error:function(){
+            	console.log('could not fetch user data');
+        	}
+    	});
+    	},5000);
+    }
+})</script>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tweet Conversation</title>
+</head>
+
+<body>
+    {% if conversations|length == 0%}
+        <h2>Start Your Twitter Conversation Now & See Your Responses here!!!</h2>
+    {% endif %}
+	{% include 'tweets/conversation.html' %}
+</body>
+
+</html> 

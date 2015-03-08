@@ -1,0 +1,8 @@
+<form action="/api/user-timeline/" method="post" id="formid">
+{% csrf_token %}
+	Enter Twitter handles to start seeing conversations:<br>
+		<input type="text" name="screen_name1" placeholder="Enter First Twitter Handle">
+		<input type="text" name="screen_name2" placeholder="Enter Second Twitter Handle">
+	<br><br>
+	<input type="submit" value="Submit">
+</form>
