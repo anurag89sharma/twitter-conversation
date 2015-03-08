@@ -15,5 +15,5 @@ fi
 
 echo "Deploying the app."
 echo "App Deployed. Open this link - http://127.0.0.1:8010/ in a web browser"
-$(python $BASEDIR/twitter-conversation/manage.py runserver 8010)
+$(python $BASEDIR/manage.py runserver 8010)
 echo "App Deployed. Open this link - http://127.0.0.1:8010/ in a web browser"
